@@ -1,0 +1,12 @@
+extends ./layout
+block content  
+	div(class="welcome") 
+		h3 #{company.name}
+	div(class="media-container")
+		h4 Proud employers of
+		each user in users
+			a(class="button" href="/api/user/#{user.id}") #{user.name}
+		a(href="/api/updateCompany/#{company.id}" class="button secondary") Update Company
+		form(method="post" action="/api/deleteCompany/#{company.id}")
+			div(class="form-group")
+			button(type="submit" class="button alert") Delete Company

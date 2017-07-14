@@ -1,0 +1,12 @@
+extends ./layout
+block content
+	div(class="media-container")  
+		h2(class="header") Create User
+		form(method="post" action="/api/createUser")
+			div(class="form-group")
+				input(type="text" name="name" placeholder="Name")
+			div(class="form-group")
+				input(type="text" name="age" placeholder="Age")
+			div(class="form-group")
+				input(type="text" name="companyName" placeholder="Company Name")
+			button(type="submit" class="button") Submit

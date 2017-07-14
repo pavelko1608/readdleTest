@@ -1,0 +1,9 @@
+extends ./layout
+block content  
+	div(class="welcome") 
+		h3 #{user.name}, #{user.age} years old. Works at #{user.companyName}
+	div(class="media-container")
+		a(href="/api/updateUser/#{user.id}" class="button secondary") Update User
+		form(method="post" action="/api/deleteUser/#{user.id}")
+			div(class="form-group")
+			button(type="submit" class="button alert") Delete User

@@ -1,0 +1,8 @@
+extends ./layout
+block content
+	div(class="media-container")  
+		h2(class="header") Create Company
+		form(method="post" action="/api/createCompany")
+			div(class="form-group")
+				input(type="text" name="name" placeholder="Name")
+			button(type="submit" class="button") Submit

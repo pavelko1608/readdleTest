@@ -1,0 +1,18 @@
+extends ./layout
+block content  
+	div(class="welcome") 
+			h3 Welcome, Hope y'all are going to enjoy this test app!
+	hr
+	div(class="media-container")
+		h2 Users
+		each user in users
+			a(class="button" href="/api/user/#{user.id}") #{user.name}
+			p #{user.age} years old. 
+			if user.companyName
+				p Works at #{user.companyName}
+			div
+				a(href="/api/updateUser/#{user.id}" class="button secondary") Update User
+				form(method="post" action="/api/deleteUser/#{user.id}")
+					div(class="form-group")
+					button(type="submit" class="button alert") Delete User
+			hr		

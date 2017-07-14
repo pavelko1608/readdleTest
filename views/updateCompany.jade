@@ -1,0 +1,8 @@
+extends ./layout
+block content
+	div(class="media-container")  
+		h2(class="header") Update Company
+		form(method="post" action="/api/updateCompany/#{company.id}")
+			div(class="form-group")
+				input(type="text" name="name" placeholder="#{company.name}")
+			button(type="submit" class="button") Submit

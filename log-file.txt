@@ -1,0 +1,16 @@
+Server started on port3000
+Executing (default): SELECT 1+1 AS result
+Executing (default): DROP TABLE IF EXISTS `users`;
+Connection has been established successfully.
+Executing (default): DROP TABLE IF EXISTS `companies`;
+Executing (default): DROP TABLE IF EXISTS `companies`;
+Executing (default): CREATE TABLE IF NOT EXISTS `companies` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` VARCHAR(255) NOT NULL UNIQUE, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, UNIQUE (`name`));
+Executing (default): PRAGMA INDEX_LIST(`companies`)
+Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_companies_1`)
+Executing (default): DROP TABLE IF EXISTS `users`;
+Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` VARCHAR(255) NOT NULL UNIQUE, `age` INTEGER NOT NULL, `companyName` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, UNIQUE (`name`));
+Executing (default): PRAGMA INDEX_LIST(`users`)
+Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_users_1`)
+It worked!
+Executing (default): INSERT INTO `companies` (`id`,`name`,`createdAt`,`updatedAt`) VALUES (NULL,'Apple','2017-06-22 12:23:33.062 +00:00','2017-06-22 12:23:33.062 +00:00');
+Executing (default): SELECT `id`, `name`, `createdAt`, `updatedAt` FROM `companies` AS `company`;

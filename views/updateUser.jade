@@ -1,0 +1,12 @@
+extends ./layout
+block content
+	div(class="media-container")  
+		h2(class="header") Update User
+		form(method="post" action="/api/updateUser/#{user.id}")
+			div(class="form-group")
+				input(type="text" name="name" placeholder="#{user.name}")
+			div(class="form-group")
+				input(type="text" name="age" placeholder="#{user.age}")
+			div(class="form-group")
+				input(type="text" name="companyName" placeholder="#{user.companyName}")			
+			button(type="submit" class="button") Submit

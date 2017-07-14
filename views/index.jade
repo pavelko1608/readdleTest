@@ -1,0 +1,16 @@
+extends ./layout
+block content  
+	div(class="welcome") 
+			h3 Welcome, Hope y'all are going to enjoy this test app!
+	hr
+	div(class="media-container")
+		h2 Companies
+		each company in companies
+			a(class="button" href="/api/company/#{company.id}") #{company.name}
+			div
+				a(href="/api/updateCompany/#{company.id}" class="button secondary") Update Company
+				form(method="post" action="/api/deleteCompany/#{company.id}")
+					div(class="form-group")
+					button(type="submit" class="button alert") Delete Company
+			hr		
+					
